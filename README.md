@@ -4,7 +4,7 @@
 
 ## C 预处理宏
 
-[Click](http://www.cnblogs.com/clover-toeic/p/3851102.html)  
+请先参照这里[Click](http://www.cnblogs.com/clover-toeic/p/3851102.html)了解C语言预处理宏。（PS:[这里](https://github.com/LynnListen/LynnListen.github.io/blob/master/worknote/C%20language%20preprocess%20-%20clover_toeic.pdf)有pdf备份）  
 字符串化操作符#在宏定义中可以将后续的code转化成字符串，但后面只能接宏参数。若在宏定义的代码中存在#开头的预处理宏，将会造成编译不能通过出现。
 参照我维护的[代码](https://github.com/MlWoo/torch7/blob/internal-use/lib/TH/generic/THTensorCopy.c)。
 在 `#define TH_TENSOR_APPLY2_ADVANCED_INDEX(TYPE1, TENSOR1, TYPE2, TENSOR2, ADV_CODE, ORI_CODE) \`的宏定义中，想要使用openmp和
