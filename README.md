@@ -78,6 +78,20 @@ Gdb使用 
 运行  run    
 查看断点 info breakpoints   
 删除断点delete  breakpoints No   
+2. python 包管理
+```bash
+pip list 
+pip list --outdated
+pip install –upgrade _PACKAGE_
+```  
+批量升级
+```python
+import pip
+from subprocess import call
+ 
+for dist in pip.get_installed_distributions():
+    call("pip install --upgrade " + dist.project_name, shell=True)
+```
 
 ## centos无su权限安装软件包
 [参考链接](http://unix.stackexchange.com/questions/61283/yum-install-in-user-home-for-non-admins)  
