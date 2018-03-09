@@ -78,3 +78,21 @@ Gdb使用 
 运行  run    
 查看断点 info breakpoints   
 删除断点delete  breakpoints No   
+
+## centos无su权限安装软件包
+[参考链接](http://unix.stackexchange.com/questions/61283/yum-install-in-user-home-for-non-admins)  
+a. download rpm package  
+b. use rpm2cpio to convert it to .cpio, then cpio to extract the files inside and put them in the right places  
+`rpm2cpio xsnow-1.42-17.fc17.x86_64.rpm > xsnow.cpio `  
+c.	将cpio文件提取成普通的安装文件  
+`cpio -idv < xsnow.cpio`  
+d.	查询依赖包  
+`rpm -q -p xsnow-1.42-17.fc17.x86_64.rpm --requires`  
+e. 将提取的路径加入环境变量([C或C++开发](http://www.network-theory.co.uk/docs/gccintro/gccintro_23.html))
+```bash
+export CPLUS_INCLUDE_PATH=
+export C_INCLUDE_PATH=
+export C_PATH=  #此命令可以同时替代以上两条命令
+export LIBRARY_PATH=
+```
+
