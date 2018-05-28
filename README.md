@@ -171,10 +171,23 @@ while ${test_flag}
 do
 
   cd ${INSTALL_DIR}
-  rm -rf torch*
+  #rm -rf torch*
   cd ${REPO_DIR}
   #python setup.py clean
   ./install.sh
+  cd test
+  python import_torch.py &> python.log
+  rst=`sed '/^$/!h;$!d;g' python.log`
+  if [ -n "$rst" ]
+  then
+    echo "========================================== rebuild thouroughly"
+    cd ${REPO_DIR}
+    python setup.py clean
+    ./install.sh
+  else
+    echo "------------------------------------------ rebuild slightly"
+  fi
+
 
   cd ${BENCH_DIR}
   #pwd
@@ -203,5 +216,4 @@ do
     test_flag=false
   fi
 done
-
 ```
