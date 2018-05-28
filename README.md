@@ -159,21 +159,12 @@ commit_id_term='333e8c9b227057635d365af96430cc6f4a1bab86'
 commit_id_test='dbac3d21f67ab3ef8090471e16af15df0a8ae808'
 test_flag=true
 
-#echo $commit_id_cur
-#echo $commit_id_test
-#if [[ $commit_id_cur == $commit_id_test ]]; then
-#  test_flag=false
-#fi
-#
-#echo $test_flag
-
 while ${test_flag}
 do
 
   cd ${INSTALL_DIR}
-  #rm -rf torch*
+  rm -rf torch*
   cd ${REPO_DIR}
-  #python setup.py clean
   ./install.sh
   cd test
   python import_torch.py &> python.log
