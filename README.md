@@ -208,3 +208,10 @@ do
   fi
 done
 ```
+
+## pyaudio intallation
+pip install pyaudio portaudio.h: No such file or directory  
+```bash
+sudo apt-get install portaudio19-dev python-all-dev python3-all-dev
+pip install pyaudio
+```
