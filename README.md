@@ -225,3 +225,8 @@ screen -list #来列出所有会话
 screen -r session name  #来重新连接指定会话。 
 screen -x session_name(id) #连接attached会话 
 ```
+### 给用户启用bash环境
+
+```bash
+chsh -s /bin/bash
+```
