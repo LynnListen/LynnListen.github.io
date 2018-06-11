@@ -215,3 +215,13 @@ pip install pyaudio portaudio.h: No such file or directory
 sudo apt-get install portaudio19-dev python-all-dev python3-all-dev
 pip install pyaudio
 ```
+## linux 后台运行  
+```bash
+screen
+tar czf /data/backup.tgz /data/backup
+ctrl+a d    #不可以直接ctrl+d 这样会ternimate screen
+screen -dmS session name  #来建立一个处于断开模式下的会话（并指定其会话名）
+screen -list #来列出所有会话
+screen -r session name  #来重新连接指定会话。 
+screen -x session_name(id) #连接attached会话 
+```
