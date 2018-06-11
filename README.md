@@ -228,5 +228,5 @@ screen -x session_name(id) #连接attached会话
 ### 给用户启用bash环境
 
 ```bash
-chsh -s /bin/bash
+chsh -s /bin/bash username
 ```
