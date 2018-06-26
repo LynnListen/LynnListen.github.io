@@ -225,8 +225,19 @@ screen -list #来列出所有会话
 screen -r session name  #来重新连接指定会话。 
 screen -x session_name(id) #连接attached会话 
 ```
-### 给用户启用bash环境
-
+## 给用户启用bash环境
 ```bash
 chsh -s /bin/bash username
 ```
+## Tensorboard 远程使用
+本地机器 设置端口
+```bash
+ssh -L 16006:127.0.0.1:6006 olivier@my_server_ip
+```
+其中16006为本地端口，透传的是远端服务器的6006的端口 
+
+remote server
+```bash
+tensorboard --logdir=outdir/logdir --port=6006
+```
+将tensorboard的信息放到locallost的6006端口
