@@ -241,3 +241,6 @@ remote server
 tensorboard --logdir=outdir/logdir --port=6006
 ```
 将tensorboard的信息放到locallost的6006端口
+
+## TensorFlow  
+tf.while_loop除了指定的迭代变量可以保存之外，其body内部的均为临时变量
