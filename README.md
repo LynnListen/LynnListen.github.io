@@ -244,3 +244,14 @@ tensorboard --logdir=outdir/logdir --port=6006
 
 ## TensorFlow  
 tf.while_loop除了指定的迭代变量可以保存之外，其body内部的均为临时变量
+
+## NV Profiler
+profile时间占比
+```
+nvprof --csv --log-file $NV_SUM_LOG ./$TEST_APP
+```
+测试metrics
+```
+metrics="ipc,flop_sp_efficiency,achieved_occupancy,branch_efficiency,shared_load_transactions_per_request,gld_transactions_per_request,dram_read_throughput,dram_write_throughput,dram_utilization,shared_load_throughput,shared_store_throughput,shared_efficiency,shared_utilization,l2_read_throughput,l2_write_throughput,l2_utilization,l2_tex_read_hit_rate,l2_tex_write_hit_rate,tex_cache_throughput,tex_cache_hit_rate,tex_utilization"
+$CUDA_PATH/bin/nvprof --metrics $metrics --csv --log-file $NV_METRICS_LOG ./$TEST_APP $K $QUERY_NB $REF_NB $DIM $DATASET $OPT 2>&1 | tee $TEST_LOG
+```
