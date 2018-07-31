@@ -85,7 +85,7 @@ pip list --outdated
 pip install –upgrade _PACKAGE_
 ```  
 批量升级
-```python
+```
 import pip
 from subprocess import call
  
