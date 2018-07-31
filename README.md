@@ -78,13 +78,13 @@ Gdb使用 
 运行  run    
 查看断点 info breakpoints   
 删除断点delete  breakpoints No   
-2. python 包管理
+2. python包管理  
 ```bash
 pip list 
 pip list --outdated
 pip install –upgrade _PACKAGE_
 ```  
-批量升级
+批量升级  
 ```
 import pip
 from subprocess import call
