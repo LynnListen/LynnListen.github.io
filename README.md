@@ -231,6 +231,22 @@ screen -x session_name(id) #连接attached会话
 ```bash
 chsh -s /bin/bash username
 ```
+## Linux 管理
+
+1，将git代理走https代理
+```
+git config --global url."https://".insteadOf git://
+```  
+2.kill 进程
+```  
+kill -STOP PID
+kill -CONT PID
+```  
+3.系统关闭和重启
+```
+sudo shutdown -h now
+sudo reboot
+```  
 ## Tensorboard 远程使用
 本地机器 设置端口
 ```bash
