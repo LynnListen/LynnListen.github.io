@@ -111,6 +111,10 @@ export C_INCLUDE_PATH=
 export C_PATH=  #此命令可以同时替代以上两条命令
 export LIBRARY_PATH=
 ```
+## Ubuntu file explorer hangs
+```bash
+sudo killall nautilus
+```
 
 ## Linux 显示当前运行中进程的相关信息
 可以使用ps命令，包括进程的PID。Linux和UNIX都支持ps命令，显示所有运行中进程的相关信息。
