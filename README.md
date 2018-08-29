@@ -268,6 +268,14 @@ tensorboard --logdir=outdir/logdir --port=6006
 tf.while_loop除了指定的迭代变量可以保存之外，其body内部的均为临时变量
 
 ## NV Profiler
+Apart from nvidia-smi, on Linux you can check which processes might be using the GPU using the command
+```
+sudo fuser -v /dev/nvidia*
+```
+Reset The Nvidia Devices
+```
+ sudo nvidia-smi -r -i (gpu-id)
+```
 profile时间占比
 ```
 nvprof --csv --log-file $NV_SUM_LOG ./$TEST_APP
