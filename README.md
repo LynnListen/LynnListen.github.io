@@ -285,3 +285,8 @@ nvprof --csv --log-file $NV_SUM_LOG ./$TEST_APP
 metrics="ipc,flop_sp_efficiency,achieved_occupancy,branch_efficiency,shared_load_transactions_per_request,gld_transactions_per_request,dram_read_throughput,dram_write_throughput,dram_utilization,shared_load_throughput,shared_store_throughput,shared_efficiency,shared_utilization,l2_read_throughput,l2_write_throughput,l2_utilization,l2_tex_read_hit_rate,l2_tex_write_hit_rate,tex_cache_throughput,tex_cache_hit_rate,tex_utilization"
 $CUDA_PATH/bin/nvprof --metrics $metrics --csv --log-file $NV_METRICS_LOG ./$TEST_APP $K $QUERY_NB $REF_NB $DIM $DATASET $OPT 2>&1 | tee $TEST_LOG
 ```
+## 批量格式化修改文件名  
+
+```bash
+ls *wav | sed -r 's#mandarin-spec-(.*).wav#mv &  mandarin-audio-\1.wav#'| bash
+```
