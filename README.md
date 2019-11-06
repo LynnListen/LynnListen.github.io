@@ -148,6 +148,31 @@ top命令提供了运行中系统的动态实时视图。在命令提示行中�
 ```bash
 # top
 ```
+任务：htop命令
+htop命令提供了运行中系统的动态实时视图。在命令提示行中输入htop：
+```bash
+# top
+```
+如果没有安装htop，需要事先安装htop软件
+
+任务: ps 查看进程用户名过长的问题
+```bash
+ps -o ruser=userForLongName -e -o pid,ppid,c,stime,tty,time,cmd
+```
+任务： 进程限制到指定的CPU上
+```bash
+taskset --cpu-list 1,2 my_command
+```
+如果遇到环境变量，在脚本开始export
+```bash
+export CUDA_VISIBLE_DEVICES=$1
+taskset --cpu-list 0,1 python train.py --name=$2       \
+                                       --data_dir=$3   
+```
+如果程序已经启动，查找到进程PID
+```bash
+taskset -c -p cpuid pid
+```
 
 ## perf regression automatic test script
 ```bash
