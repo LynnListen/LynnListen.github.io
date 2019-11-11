@@ -94,6 +94,10 @@ from subprocess import call
 for dist in pip.get_installed_distributions():
     call("pip install --upgrade " + dist.project_name, shell=True)
 ```
+python 不使用 本地package包
+```
+export PYTHONNOUSERSITE=1
+```
 
 ## centos无su权限安装软件包
 [参考链接](http://unix.stackexchange.com/questions/61283/yum-install-in-user-home-for-non-admins)  
@@ -173,6 +177,11 @@ taskset --cpu-list 0,1 python train.py --name=$2       \
 ```bash
 taskset -c -p cpuid pid
 ```
+递归比较文件夹
+```
+diff --brief --recursive  --exclude="__pycache__" dev-bin/anaconda3/lib/python3.6/site-packages/tensorflow/  .local/lib/python3.6/site-packages/tensorflow
+```
+
 
 ## perf regression automatic test script
 ```bash
