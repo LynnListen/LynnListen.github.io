@@ -279,12 +279,17 @@ git config --global url."https://".insteadOf git://
 ```  
 kill -STOP PID
 kill -CONT PID
+ps -ef|grep wavenet|grep -v grep|cut -c 9-15|xargs kill -9 # 杀死相关的所有进程
 ```  
 3.系统关闭和重启
 ```
 sudo shutdown -h now
 sudo reboot
 ```  
+4.查看进程相关的依赖的库和程序
+```
+cat /proc/PID/maps
+```
 ## Tensorboard 远程使用
 本地机器 设置端口
 ```bash
@@ -323,4 +328,9 @@ $CUDA_PATH/bin/nvprof --metrics $metrics --csv --log-file $NV_METRICS_LOG ./$TES
 
 ```bash
 ls *wav | sed -r 's#mandarin-spec-(.*).wav#mv &  mandarin-audio-\1.wav#'| bash
+```
+
+## 批量修改文件里的内容
+```bash
+sed -i "s/retinanet/nv_trt/g" `grep retinanet -rl ./`
 ```
