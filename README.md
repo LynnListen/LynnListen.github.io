@@ -334,3 +334,8 @@ ls *wav | sed -r 's#mandarin-spec-(.*).wav#mv &  mandarin-audio-\1.wav#'| bash
 ```bash
 sed -i "s/retinanet/nv_trt/g" `grep retinanet -rl ./`
 ```
+## docker 使用
+```bash
+docker run -it  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864   --gpus "device=0" -v/home/yckj0952/temp/serving_pipeline_sdk/:/serving_pipeline_sdk 81ebdeaec925 /bin/bash
+
+```
